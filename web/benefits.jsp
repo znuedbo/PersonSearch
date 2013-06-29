@@ -10,6 +10,6 @@
     Synchronizer Sync = new Synchronizer();
     request.setCharacterEncoding("UTF-8");
     int personId= Integer.parseInt(request.getParameter("personId"));
-    out.print(Sync.getPersonBenefitsEdbo(personId));
+    out.print(Sync.getPersonBenefitsEdboJson(personId));
     out.flush();
 %>
