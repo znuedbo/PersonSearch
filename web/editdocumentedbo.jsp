@@ -1,6 +1,6 @@
 <%-- 
-    Document   : personbenefitsaddedbo
-    Created on : 29.06.2013, 13:49:16
+    Document   : editdocumentedbo
+    Created on : 02.07.2013, 15:47:47
     Author     : mathdep
 --%>
 
@@ -9,8 +9,7 @@
 <%
 Synchronizer Sync = new Synchronizer();
 request.setCharacterEncoding("UTF-8");
-Sync.setSeasonId(3);
-int personIdMySql = Integer.parseInt(request.getParameter("personIdMySql"));
-out.print(Sync.addPersonBenefits(personIdMySql));
+int documentIdMySql = Integer.parseInt(request.getParameter("documentIdMySql"));
+out.print(Sync.editDocumentEdbo(documentIdMySql));
 out.flush();
 %>
