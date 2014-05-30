@@ -40,6 +40,14 @@
             <p>Код персоны: <input type="text" name="personCodeU"></p>
             <input type="submit" value="Поиск">
         </form>
+        <form action="getphoto.jsp" method="post">
+            <p>Сервис <b>getphoto.jsp</b> загружает фото персоны по ее коду в базе ЕДБО.
+                Параметр <b>personCodeU</b> - код персоны в базе данных ЕДБО.
+                Результат - фото ы формате base64.</p>
+            <p>Test: a8a274a4-c3cf-4561-bc48-c35ee396fa20 ;</p>
+            <p>Код персоны: <input type="text" name="personCodeU"></p>
+            <input type="submit" value="Поиск">
+        </form>
         <form action="documents.jsp" method="post">
             <p>Сервис <b>documents.jsp</b> формирует список документов персоны по ее коду в базе ЕДБО.
                 Параметр <b>personCodeU</b> - код персоны в базе данных ЕДБО.
