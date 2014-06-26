@@ -4,12 +4,12 @@
     Author     : С.В. Чопоров (S.V. Choporov)
 --%>
 
-<%@page import="edbosync.Synchronizer"%>
+<%@page import="edbosync.EdboBenefits"%>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-    Synchronizer Sync = new Synchronizer();
+    EdboBenefits benefits = new EdboBenefits();
     request.setCharacterEncoding("UTF-8");
     int personId= Integer.parseInt(request.getParameter("personId"));
-    out.print(Sync.getPersonBenefitsEdboJson(personId));
+    out.print(benefits.load(personId));
     out.flush();
 %>
