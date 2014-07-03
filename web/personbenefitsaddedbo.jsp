@@ -4,13 +4,12 @@
     Author     : mathdep
 --%>
 
-<%@page import="edbosync.Synchronizer"%>
+<%@page import="edbosync.EdboBenefits"%>
 <%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-Synchronizer Sync = new Synchronizer();
-request.setCharacterEncoding("UTF-8");
-Sync.setSeasonId(3);
-int personIdMySql = Integer.parseInt(request.getParameter("personIdMySql"));
-out.print(Sync.addPersonBenefits(personIdMySql));
-out.flush();
+    EdboBenefits edboBenefits = new EdboBenefits();
+    request.setCharacterEncoding("UTF-8");
+    int personIdMySql = Integer.parseInt(request.getParameter("personIdMySql"));
+    out.print(edboBenefits.sync(personIdMySql));
+    out.flush();
 %>
