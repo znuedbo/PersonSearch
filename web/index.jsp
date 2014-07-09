@@ -72,5 +72,18 @@
             <p>Код персоны: <input type="text" name="personId"></p>
             <input type="submit" value="Поиск">
         </form>
+        <form action="requestload.jsp" method="post">
+            <p>Сервис <b>requestload.jsp</b> формирует список заявок персоны из ЕДБО
+                Результат - список заявок в формате json.</p>
+            <p>Код персоны: <input type="text" name="personCodeU"></p>
+            <p>Код заявки: <input type="text" name="idRequest" value="0"></p>
+            <input type="submit" value="Поиск">
+        </form>
+        <form action="requestsubjects.jsp" method="post">
+            <p>Сервис <b>requestsubjects.jsp</b> формирует список предметов заявки персоны из ЕДБО
+                Результат - список поредметов в формате json.</p>
+            <p>Код заявки: <input type="text" name="idRequest" value="0"></p>
+            <input type="submit" value="Поиск">
+        </form>
     </body>
 </html>
