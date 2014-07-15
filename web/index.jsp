@@ -85,5 +85,62 @@
             <p>Код заявки: <input type="text" name="idRequest" value="0"></p>
             <input type="submit" value="Поиск">
         </form>
+        <form action="requestsbystatus.jsp" method="post">
+            <p><b>requestsbystatus.jsp</b> - сервис для получения списка идентификаторов заявок по статусу, квалификации и дате создания.</p>
+            <p>Параметры<br>
+                idStatus - идентификатор статуса (int),<br>
+                idQualification - идентификатор квалификации (int),<br>
+                createDate - дата создания заявки.
+            </p>
+            <p>
+                Статус: 
+                <select name="idStatus">
+                    <option value="0">Видалена</option>
+                    <option value="1">Нова заява</option>
+                    <option value="2">Відмова</option>
+                    <option value="3">Відмова</option>
+                    <option value="4">Допущена</option>
+                    <option value="5">Рекомендовано</option>
+                    <option value="6">Відхилено</option>
+                    <option value="7">До наказу</option>
+                    <option value="8">Заяви, які прийшли з сайту</option>
+                    <option value="9">Затримано</option>
+                    <option value="10">Видалена</option>
+                </select>
+            </p>
+            <p>
+                Квалификация:
+                <select name="idQualification">
+                    <option value="1">Бакалавр</option>
+                    <option value="2">магістр</option>
+                    <option value="3">спеціаліст</option>
+                    <option value="4">Молодший спеціаліст</option>
+                </select>
+            </p>
+            <p>
+                Дата создания заявки:
+                <input name="createDate" title="text" value="2014-07-11">
+            </p>
+            <input type="submit" value="Поехали">
+        </form>
+        <form action="requeststatuschange.jsp" method="post">
+            <p><b>requeststatuschange.jsp</b> - сервис изменения статуса заяки в ЕДБО.</p>
+            <p>
+                Параметры:<br>
+                idPersonRequest - идентификатор заявки в ЕДБО (int),<br>
+                idStatus - новый статус заявки (int),<br>
+                numberProtocol - Номер протокола решения приемной комисси (string),<br>
+                dateProtocol - Дата протокола решения приемной комисси (string, формат dd.MM.YYYY hh:mm:ss; например, 10.07.2014 17:40:00).
+            </p>
+            <p>
+                Результат - статус попытки изменения в формате json<br>
+                Струткура SubmitStatus:<br>
+                boolean error = true; // Флаг наличия ошибки<br>
+                String guid = ""; // GUID из ЕДБО (в случае успеха)<br>
+                int id; // Идентификатор из ЕДБО (в случае успеха)<br>
+                String message = ""; // Сообщение об ошибке<br>
+                boolean backTransaction = true; // флаг необходимости отмены транзакции<br>
+            </p>
+        </form>
     </body>
 </html>
