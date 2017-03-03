@@ -58,6 +58,7 @@
                     if (examinationsArray == null) {
                         edbo = new EdboPersonConnector();
                         if (edbo != null) { // reconnected
+                            soap = edbo.getSoap();
                             examinationsArray = soap.personRequestExaminationsGet(edbo.getSessionGuid(), edbo.getActualDate(), edbo.getLanguageId(), idPersonRequest);
                         }
                         if (examinationsArray == null) {
